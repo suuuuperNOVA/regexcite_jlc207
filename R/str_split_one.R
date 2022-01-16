@@ -8,15 +8,15 @@
 #'
 #' @examples
 #' x <- "alfa,bravo,charlie,delta"
-#' strsplit1(x, pattern = ",")
-#' strsplit1(x, pattern = ",", n = 2)
+#' str_split_one(x, pattern = ",")
+#' str_split_one(x, pattern = ",", n = 2)
 #'
 #' y <- "192.168.0.1"
-#' strsplit1(y, pattern = stringr::fixed("."))''
-strsplit1 <- function(string, split, n = Inf) {
+#' str_split_one(y, pattern = stringr::fixed("."))
+str_split_one <- function(string, pattern, n = Inf) {
   stopifnot(is.character(string), length(string) <= 1)
   if (length(string) == 1) {
-    stringr::str_split(string = string, pattern = split, n = n)[[1]]
+    stringr::str_split(string = string, pattern = pattern, n = n)[[1]]
   } else {
     character()
   }
